@@ -1,0 +1,35 @@
+{
+  "name": "nexter---your-home-your-freedom",
+  "version": "1.0.0",
+  "description": "Grid Practice Website",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass sass/main.scss css/style.css --watch",
+    "start": "npm-run-all watch:sass",
+    "compile:sass": "sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "sass css/style.prefix.css css/style.css --style=compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuvraDebPaul/Nexter---Your-Home-Your-Freedom.git"
+  },
+  "keywords": [
+    "Real",
+    "State"
+  ],
+  "author": "Suvra Deb Paul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuvraDebPaul/Nexter---Your-Home-Your-Freedom/issues"
+  },
+  "homepage": "https://github.com/SuvraDebPaul/Nexter---Your-Home-Your-Freedom#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "concat": "^1.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^11.0.1",
+    "sass": "^1.89.2"
+  }
+}
