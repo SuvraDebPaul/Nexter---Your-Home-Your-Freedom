@@ -18,6 +18,7 @@ $color-secondary: #101d2c;
 $bp-xl: 75em; //1200px
 $bp-1k: 62.5em; // 1000px
 $bp-8: 50em; // 800px
+$bp-6: 37.5em; // 600px
 
 *,
 *::before,
@@ -59,7 +60,13 @@ body {
       [center-end] minmax(6rem, 1fr) [full-end];
   }
   @media only screen and (max-width: $bp-8) {
-    grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content 40vw repeat(
+    grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content max-content repeat(
+        3,
+        max-content
+      );
+  }
+  @media only screen and (max-width: $bp-6) {
+    grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content max-content repeat(
         3,
         min-content
       );

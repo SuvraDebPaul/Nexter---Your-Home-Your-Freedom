@@ -1,3 +1,5 @@
+@use "../Compiler/base" as *;
+
 %heading {
   font-family: var(--Jos);
   font-weight: 400;
@@ -20,6 +22,9 @@
   }
   &--dark {
     color: var(--color-grey-dark-1);
+    @media only screen and (max-width: $bp-6) {
+      font-size: 3rem;
+    }
   }
 }
 
@@ -51,7 +56,9 @@
   padding: 1.8rem 3rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-
+  @media only screen and (max-width: $bp-6) {
+    padding: 1.2rem 1.5rem;
+  }
   &:hover {
     background-color: var(--color-primary-dark);
   }
@@ -59,9 +66,15 @@
 
 .mb-sm {
   margin-bottom: 2rem;
+  @media only screen and (max-width: $bp-6) {
+    margin-bottom: 1rem;
+  }
 }
 .mb-md {
   margin-bottom: 3rem;
+  @media only screen and (max-width: $bp-6) {
+    margin-bottom: 1rem;
+  }
 }
 .mb-lg {
   margin-bottom: 4rem;

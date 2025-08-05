@@ -12,6 +12,7 @@
     grid-column: 1/-1;
     grid-row: 1 / 2;
     justify-content: flex-start;
+    align-items: center;
   }
 }
 
@@ -40,5 +41,12 @@
 
   @media only screen and (max-width: $bp-1k) {
     margin-left: 2rem;
+    margin-top: 0;
+    &::before {
+      transform: translateY(-1rem);
+    }
+    &::after {
+      transform: translateY(1rem);
+    }
   }
 }
