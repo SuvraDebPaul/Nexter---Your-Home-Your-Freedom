@@ -1,3 +1,5 @@
+@use "../Compiler/base" as *;
+
 .sidebar {
   background-color: var(--color-primary);
   grid-column: sidebar-start / sidebar-end;
@@ -5,6 +7,12 @@
 
   display: flex;
   justify-content: center;
+
+  @media only screen and (max-width: $bp-1k) {
+    grid-column: 1/-1;
+    grid-row: 1 / 2;
+    justify-content: flex-start;
+  }
 }
 
 .nav-btn {
@@ -28,5 +36,9 @@
   }
   &::after {
     transform: translateY(1.2rem);
+  }
+
+  @media only screen and (max-width: $bp-1k) {
+    margin-left: 2rem;
   }
 }

@@ -13,6 +13,11 @@
   --color-grey-dark-2: #6d5d4b;
 }
 $color-secondary: #101d2c;
+//RESPONSIVE BREAKPOINT
+
+$bp-xl: 75em; //1200px
+$bp-1k: 62.5em; // 1000px
+$bp-8: 50em; // 800px
 
 *,
 *::before,
@@ -25,6 +30,10 @@ $color-secondary: #101d2c;
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+
+  @media only screen and (max-width: $bp-xl) {
+    font-size: 56.25%;
+  }
 }
 
 body {
@@ -41,4 +50,18 @@ body {
     [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
     [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
     [center-end] minmax(6rem, 1fr) [full-end];
+
+  @media only screen and (max-width: $bp-1k) {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr)
+      [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+      [center-end] minmax(6rem, 1fr) [full-end];
+  }
+  @media only screen and (max-width: $bp-8) {
+    grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content 40vw repeat(
+        3,
+        min-content
+      );
+  }
 }
